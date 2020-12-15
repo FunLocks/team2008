@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Lets-Katikomi</string>
+    <string name="todo">TODO</string>
+    <string-array name="arrayFloor">
+        <item>F1</item>
+        <item>F2</item>
+        <item>F3</item>
+        <item>F4</item>
+        <item>F5</item>
+    </string-array>
 </resources>
