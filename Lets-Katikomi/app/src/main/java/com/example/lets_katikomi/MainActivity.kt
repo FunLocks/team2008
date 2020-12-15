@@ -28,16 +28,22 @@ class MainActivity : AppCompatActivity() {
                 val text = parent?.selectedItem as String
 
 
-                if (text == "F1") {
-                    image.setImageResource(R.drawable.fun1)
-                } else if (text == "F2") {
-                    image.setImageResource(R.drawable.fun2)
-                } else if (text == "F3") {
-                    image.setImageResource(R.drawable.fun3)
-                } else if (text == "F4") {
-                    image.setImageResource(R.drawable.fun4)
-                } else {
-                    image.setImageResource(R.drawable.fun5)
+                when(text) {
+                    "F1" -> {
+                        image.setImageResource(R.drawable.fun1)
+                    }
+                    "F2" -> {
+                        image.setImageResource(R.drawable.fun2)
+                    }
+                    "F3" -> {
+                        image.setImageResource(R.drawable.fun3)
+                    }
+                    "F4" -> {
+                        image.setImageResource(R.drawable.fun4)
+                    }
+                    "F5"-> {
+                        image.setImageResource(R.drawable.fun5)
+                    }
                 }
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
