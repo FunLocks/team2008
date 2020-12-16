@@ -1,10 +1,20 @@
 <resources>
     <string name="app_name">Lets-Katikomi</string>
 
+
     <string name="mapTOdetail">詳細を表示</string>
     <string name="detailTOmap">マップを表示</string>
     <string name="mapTOsetting">設定</string>
     <string name="detailTOsetting">設定</string>
     <string name="settingTOmap">マップを表示</string>
     <string name="settingTOdetail">詳細を表示</string>
+  
+    <string name="todo">TODO</string>
+    <string-array name="arrayFloor">
+        <item>F1</item>
+        <item>F2</item>
+        <item>F3</item>
+        <item>F4</item>
+        <item>F5</item>
+    </string-array>
 </resources>
