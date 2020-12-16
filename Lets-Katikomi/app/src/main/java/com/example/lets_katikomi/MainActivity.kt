@@ -20,11 +20,11 @@ class MainActivity : AppCompatActivity() {
 
         val image = findViewById<ImageView>(R.id.mapView)
         /*--------------------------------------------------------------------*/
-        val user_name = getSharedPreferences("user_name", Context.MODE_PRIVATE)
-        val storedText = user_name.getString("key", "未登録")
-        val name = findViewById<TextView>(R.id.username)
-        name.setText(storedText)
-        /*----------------------------------------------------------------------*/
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val storedText = pref.getString("key", "未登録")
+        val username = findViewById<TextView>(R.id.username)
+        username.setText(storedText)
+        /*---------------------------------------------------------------------*/
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 

@@ -13,16 +13,28 @@ class setting : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting)
         /*--------------------------------------------------------------------*/
-        val user_name = getSharedPreferences("user_name", Context.MODE_PRIVATE)
-        val storedText = user_name.getString("key", "未登録")
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        //SharedPreferencesオブジェクトの取得、このオブジェクトに対してデータの要求保存
+        //第１引数→ファイル名(xmlファイルにデータ保存するので),第２引数→ファイルの共有モード
+
+        val storedText = pref.getString("key", "未登録")
+        //データの型に合わせたメソッドでデータを読み取る。
+        //第１引数→保存に指定したキー,第２引数→キーがないときの返すデータ
+
         val editText = findViewById<EditText>(R.id.editTextTextPersonName2)
         editText.setText(storedText)
+        //EditTextに読み取ったデータ表示してる
 
         val save_button = findViewById<Button>(R.id.saveButton)
 
         save_button.setOnClickListener{
             val inputText = editText.text.toString()
-            user_name.edit().putString("key", inputText).apply()
+            //EditTextに入力されたデータ
+
+            //プリファレンスに保存
+            pref.edit().putString("key", inputText).apply()
+            //edit()→編集用のEditerオブジェクトを取得
+            //putString()→第１引数→キー名,第２引数→保存するデータ apply()→編集内容を反映
         }
         /*--------------------------------------------------------------------*/
     }
