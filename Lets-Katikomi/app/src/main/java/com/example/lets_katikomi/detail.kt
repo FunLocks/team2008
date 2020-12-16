@@ -13,6 +13,8 @@ class detail : AppCompatActivity() {
 
     fun onButtonTappedMD(view: View?){
         finish()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
     fun onButtonTappedDS(view: View?) {
         finish()

@@ -1,5 +1,6 @@
 package com.example.lets_katikomi
 
+import android.content.Context
 import android.content.Intent
 
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val image = findViewById<ImageView>(R.id.mapView)
+        /*--------------------------------------------------------------------*/
+        val user_name = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val storedText = user_name.getString("key", "未登録")
+        val name = findViewById<TextView>(R.id.username)
+        name.setText(storedText)
+        /*----------------------------------------------------------------------*/
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
