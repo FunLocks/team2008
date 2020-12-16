@@ -4,27 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".detail">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button4"
         android:layout_width="148dp"
         android:layout_height="52dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="32dp"
         android:onClick="onButtonTappedMD"
-        android:text="@string/mapTOdetail"
+        android:text="@string/detailTOmap"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button6"
         android:layout_width="148dp"
         android:layout_height="52dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="36dp"
-        android:onClick="onButtonTappedMS"
-        android:text="@string/mapTOsetting"
+        android:onClick="onButtonTappedDS"
+        android:text="@string/detailTOsetting"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

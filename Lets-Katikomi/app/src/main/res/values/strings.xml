@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Lets-Katikomi</string>
+
+    <string name="mapTOdetail">詳細を表示</string>
+    <string name="detailTOmap">マップを表示</string>
+    <string name="mapTOsetting">設定</string>
+    <string name="detailTOsetting">設定</string>
+    <string name="settingTOmap">マップを表示</string>
+    <string name="settingTOdetail">詳細を表示</string>
 </resources>
