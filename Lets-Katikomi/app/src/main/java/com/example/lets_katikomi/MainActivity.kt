@@ -1,6 +1,7 @@
 package com.example.lets_katikomi
 
 import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -50,4 +52,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    fun onButtonTappedMD(view: View?) {
+        val intent = Intent(this, detail::class.java)
+        startActivity(intent)
+    }
+
+    fun onButtonTappedMS(view: View?) {
+        val intent = Intent(this, setting::class.java)
+        startActivity(intent)
+    }
+
+
+
 }

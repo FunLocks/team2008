@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="148dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="32dp"
+        android:onClick="onButtonTappedMD"
+        android:text="@string/mapTOdetail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/mapView"
         android:layout_width="wrap_content"
@@ -26,4 +38,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="148dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="36dp"
+        android:onClick="onButtonTappedMS"
+        android:text="@string/mapTOsetting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
