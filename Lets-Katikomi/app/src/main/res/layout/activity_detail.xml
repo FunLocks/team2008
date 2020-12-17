@@ -7,7 +7,7 @@
     tools:context=".detail">
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/DtoM"
         android:layout_width="148dp"
         android:layout_height="52dp"
         android:layout_marginStart="36dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/DtoS"
         android:layout_width="148dp"
         android:layout_height="52dp"
         android:layout_marginTop="32dp"
