@@ -53,8 +53,9 @@ class MainActivity : AppCompatActivity() {
         /*--------------------------------------------------------------------*/
         val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
         val storedText = pref.getString("key", "未登録")
-        val username = findViewById<TextView>(R.id.username)
         username.setText(storedText)
+        val storedRoom = pref.getString("room", "未登録")
+        selectedRoom.setText(storedRoom)
         /*---------------------------------------------------------------------*/
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -65,10 +66,9 @@ class MainActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                val text = parent?.selectedItem as String
+                val floor = parent?.selectedItem as String
 
-
-                when(text) {
+                when(floor) {
                     "F1" -> {
                         image.setImageResource(R.drawable.fun1)
                         dining.visibility=View.VISIBLE
@@ -240,14 +240,19 @@ class MainActivity : AppCompatActivity() {
 
             val name = storedText.toString()
 
-            val user = hashMapOf(
-                "user" to name
-            )
+            if (selectedRoom.text == "選択された部屋") {
+                Toast.makeText(applicationContext, "部屋を選択してください", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                val user = hashMapOf(
+                        "user" to name
+                )
 
-            db.collection("users").document(name)
-                .set(user)
-                .addOnSuccessListener { Toast.makeText(applicationContext, "入室しました", Toast.LENGTH_SHORT).show() }
-                .addOnFailureListener { Toast.makeText(applicationContext, "入室に失敗しました", Toast.LENGTH_SHORT).show() }
+                db.collection(selectedRoom.text.toString()).document(name)
+                        .set(user)
+                        .addOnSuccessListener { Toast.makeText(applicationContext, "入室しました", Toast.LENGTH_SHORT).show() }
+                        .addOnFailureListener { Toast.makeText(applicationContext, "入室に失敗しました", Toast.LENGTH_SHORT).show() }
+            }
         }
         else {
             Toast.makeText(applicationContext, "設定から名前を入力してください", Toast.LENGTH_SHORT).show()
@@ -263,14 +268,201 @@ class MainActivity : AppCompatActivity() {
 
             val name = storedText.toString()
 
-            db.collection("users").document(name)
-                .delete()
-                .addOnSuccessListener { Toast.makeText(applicationContext, "退室しました", Toast.LENGTH_SHORT).show() }
-                .addOnFailureListener { Toast.makeText(applicationContext, "退室に失敗しました", Toast.LENGTH_SHORT).show() }
+            if (selectedRoom.text == "選択された部屋") {
+                Toast.makeText(applicationContext, "部屋を選択してください", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                db.collection(selectedRoom.text.toString()).document(name)
+                        .delete()
+                        .addOnSuccessListener { Toast.makeText(applicationContext, "退室しました", Toast.LENGTH_SHORT).show() }
+                        .addOnFailureListener { Toast.makeText(applicationContext, "退室に失敗しました", Toast.LENGTH_SHORT).show() }
+            }
         }
         else {
             Toast.makeText(applicationContext, "設定から名前を入力してください", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun onClickDining(view: View) {
+        selectedRoom.text = dining.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickAtelier(view: View) {
+        selectedRoom.text = atelier.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickShop(view: View) {
+        selectedRoom.text = shop.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickMuseum(view: View) {
+        selectedRoom.text = museum.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickSocial(view: View) {
+        selectedRoom.text = social.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickGym(view: View) {
+        selectedRoom.text = gym.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickLargeLectureRoom(view: View) {
+        selectedRoom.text = largeLectureRoom.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickLibrary(view: View) {
+        selectedRoom.text = library.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickCom365(view: View) {
+        selectedRoom.text = com365.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickCom364(view: View) {
+        selectedRoom.text = com364.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickCom363(view: View) {
+        selectedRoom.text = com363.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickC_d495(view: View) {
+        selectedRoom.text = c_d495.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickC_d494(view: View) {
+        selectedRoom.text = c_d494.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickR493(view: View) {
+        selectedRoom.text = r493.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickR485(view: View) {
+        selectedRoom.text = r485.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickR484(view: View) {
+        selectedRoom.text = r484.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickCom483(view: View) {
+        selectedRoom.text = com483.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickSecretariat(view: View) {
+        selectedRoom.text = secretariat.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickAuditorium(view: View) {
+        selectedRoom.text = auditorium.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickLabo(view: View) {
+        selectedRoom.text = labo.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickR595(view: View) {
+        selectedRoom.text = r595.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickR594(view: View) {
+        selectedRoom.text = r594.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickR593(view: View) {
+        selectedRoom.text = r593.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickR585(view: View) {
+        selectedRoom.text = r585.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickR584(view: View) {
+        selectedRoom.text = r584.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
+    }
+
+    fun onClickR583(view: View) {
+        selectedRoom.text = r583.text
+        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
+        val inputRoom = selectedRoom.text.toString()
+        pref.edit().putString("room", inputRoom).apply()
     }
 
 
