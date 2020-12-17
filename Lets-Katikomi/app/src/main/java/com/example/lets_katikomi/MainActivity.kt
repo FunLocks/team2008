@@ -27,8 +27,6 @@ class MainActivity : AppCompatActivity() {
         val dining = findViewById<Button>(R.id.dining)
         val atelier = findViewById<Button>(R.id.atelier)
         val shop = findViewById<Button>(R.id.shop)
-        val museum = findViewById<Button>(R.id.museum)
-        val social = findViewById<Button>(R.id.social)
         val gym = findViewById<Button>(R.id.gym)
         val largeLectureRoom = findViewById<Button>(R.id.largeLectureRoom)
         val library = findViewById<Button>(R.id.library)
@@ -74,8 +72,6 @@ class MainActivity : AppCompatActivity() {
                         dining.visibility=View.VISIBLE
                         atelier.visibility=View.VISIBLE
                         shop.visibility=View.GONE
-                        museum.visibility=View.GONE
-                        social.visibility=View.GONE
                         gym.visibility=View.GONE
                         largeLectureRoom.visibility=View.GONE
                         library.visibility=View.GONE
@@ -103,8 +99,6 @@ class MainActivity : AppCompatActivity() {
                         dining.visibility=View.GONE
                         atelier.visibility=View.GONE
                         shop.visibility=View.VISIBLE
-                        museum.visibility=View.GONE
-                        social.visibility=View.GONE
                         gym.visibility=View.GONE
                         largeLectureRoom.visibility=View.GONE
                         library.visibility=View.GONE
@@ -132,8 +126,6 @@ class MainActivity : AppCompatActivity() {
                         dining.visibility=View.GONE
                         atelier.visibility=View.GONE
                         shop.visibility=View.GONE
-                        museum.visibility=View.VISIBLE
-                        social.visibility=View.VISIBLE
                         gym.visibility=View.VISIBLE
                         largeLectureRoom.visibility=View.VISIBLE
                         library.visibility=View.VISIBLE
@@ -161,8 +153,6 @@ class MainActivity : AppCompatActivity() {
                         dining.visibility=View.GONE
                         atelier.visibility=View.GONE
                         shop.visibility=View.GONE
-                        museum.visibility=View.GONE
-                        social.visibility=View.GONE
                         gym.visibility=View.GONE
                         largeLectureRoom.visibility=View.GONE
                         library.visibility=View.GONE
@@ -190,8 +180,6 @@ class MainActivity : AppCompatActivity() {
                         dining.visibility=View.GONE
                         atelier.visibility=View.GONE
                         shop.visibility=View.GONE
-                        museum.visibility=View.GONE
-                        social.visibility=View.GONE
                         gym.visibility=View.GONE
                         largeLectureRoom.visibility=View.GONE
                         library.visibility=View.GONE
@@ -299,20 +287,6 @@ class MainActivity : AppCompatActivity() {
 
     fun onClickShop(view: View) {
         selectedRoom.text = shop.text
-        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
-        val inputRoom = selectedRoom.text.toString()
-        pref.edit().putString("room", inputRoom).apply()
-    }
-
-    fun onClickMuseum(view: View) {
-        selectedRoom.text = museum.text
-        val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
-        val inputRoom = selectedRoom.text.toString()
-        pref.edit().putString("room", inputRoom).apply()
-    }
-
-    fun onClickSocial(view: View) {
-        selectedRoom.text = social.text
         val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
         val inputRoom = selectedRoom.text.toString()
         pref.edit().putString("room", inputRoom).apply()

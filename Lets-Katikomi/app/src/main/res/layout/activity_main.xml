@@ -159,37 +159,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.648" />
 
-    <Button
-        android:id="@+id/museum"
-        android:layout_width="39dp"
-        android:layout_height="52dp"
-        android:background="#00FFFFFF"
-        android:onClick="onClickMuseum"
-        android:text="@string/ミュージアム"
-        android:textColor="@color/black"
-        android:textSize="4sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.889"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.455" />
-
-    <Button
-        android:id="@+id/social"
-        android:layout_width="41dp"
-        android:layout_height="53dp"
-        android:background="#00FFFFFF"
-        android:onClick="onClickSocial"
-        android:text="@string/社会連携センター"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.67"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
 
     <Button
         android:id="@+id/gym"
