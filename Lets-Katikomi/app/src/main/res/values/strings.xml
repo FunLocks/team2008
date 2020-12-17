@@ -10,6 +10,13 @@
     <string name="settingTOdetail">詳細を表示</string>
   
     <string name="todo">TODO</string>
+    <string-array name="arrayFloor">
+        <item>F1</item>
+        <item>F2</item>
+        <item>F3</item>
+        <item>F4</item>
+        <item>F5</item>
+    </string-array>
     <string name="食堂">食堂</string>
     <string name="アトリエ">アトリエ</string>
     <string name="小講義室585">小講義室585</string>
@@ -39,11 +46,4 @@
     <string name="_493">493</string>
     <string name="小講義室484">小講義室484</string>
     <string name="コンピューター教室483">コンピューター教室483</string>
-    <string-array name="arrayFloor">
-        <item>F1</item>
-        <item>F2</item>
-        <item>F3</item>
-        <item>F4</item>
-        <item>F5</item>
-    </string-array>
 </resources>
