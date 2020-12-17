@@ -26,7 +26,7 @@
         android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -62,6 +62,7 @@
         android:layout_marginEnd="30dp"
         android:gravity="right"
         android:text="username"
+        android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MtoS" />
@@ -94,6 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="選択された部屋"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/getoutRoom"
         app:layout_constraintEnd_toEndOf="@+id/mapView"
         app:layout_constraintStart_toStartOf="@+id/mapView" />
@@ -104,53 +106,55 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="あなたの名前："
+        android:textColor="#000000"
         app:layout_constraintEnd_toStartOf="@+id/username"
         app:layout_constraintTop_toBottomOf="@+id/MtoS" />
 
     <Button
         android:id="@+id/dining"
-        android:layout_width="45dp"
-        android:layout_height="96dp"
+        android:layout_width="44dp"
+        android:layout_height="108dp"
         android:background="#00FFFFFF"
         android:text="@string/食堂"
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintHorizontal_bias="0.928"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.708" />
+        app:layout_constraintVertical_bias="0.707" />
 
     <Button
         android:id="@+id/atelier"
-        android:layout_width="72dp"
-        android:layout_height="40dp"
+        android:layout_width="81dp"
+        android:layout_height="42dp"
         android:background="#00FFFFFF"
+        android:gravity="center"
         android:text="@string/アトリエ"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.733" />
+        app:layout_constraintVertical_bias="0.737" />
 
     <Button
         android:id="@+id/shop"
-        android:layout_width="50dp"
-        android:layout_height="58dp"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
         android:background="#00FFFFFF"
         android:text="@string/売店"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.643" />
+        app:layout_constraintVertical_bias="0.648" />
 
     <Button
         android:id="@+id/museum"
@@ -159,7 +163,7 @@
         android:background="#00FFFFFF"
         android:text="@string/ミュージアム"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="4sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.889"
@@ -204,13 +208,13 @@
         android:background="#00FFFFFF"
         android:text="@string/大講義室"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589" />
+        app:layout_constraintVertical_bias="0.594" />
 
     <Button
         android:id="@+id/library"
@@ -219,7 +223,7 @@
         android:background="#00FFFFFF"
         android:text="@string/情報ライブラリー"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.897"
@@ -234,13 +238,13 @@
         android:background="#00FFFFFF"
         android:text="@string/コンピューター教室365"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.439"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.593" />
+        app:layout_constraintVertical_bias="0.6" />
 
     <Button
         android:id="@+id/com364"
@@ -249,13 +253,13 @@
         android:background="#00FFFFFF"
         android:text="@string/コンピューター教室364"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintHorizontal_bias="0.556"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.587" />
+        app:layout_constraintVertical_bias="0.595" />
 
     <Button
         android:id="@+id/com363"
@@ -264,133 +268,133 @@
         android:background="#00FFFFFF"
         android:text="@string/コンピューター教室363"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.667"
+        app:layout_constraintHorizontal_bias="0.673"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589" />
+        app:layout_constraintVertical_bias="0.595" />
 
     <Button
         android:id="@+id/c_d495"
-        android:layout_width="37dp"
+        android:layout_width="50dp"
         android:layout_height="54dp"
         android:background="#00FFFFFF"
-        android:text="@string/C_D495"
+        android:text="@string/_495"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.429"
+        app:layout_constraintHorizontal_bias="0.435"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.281" />
+        app:layout_constraintVertical_bias="0.264" />
 
     <Button
         android:id="@+id/c_d494"
-        android:layout_width="39dp"
-        android:layout_height="53dp"
+        android:layout_width="50dp"
+        android:layout_height="54dp"
         android:background="#00FFFFFF"
-        android:text="@string/C_D494"
+        android:text="@string/_494"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintHorizontal_bias="0.564"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.281" />
+        app:layout_constraintVertical_bias="0.263" />
 
     <Button
         android:id="@+id/r493"
-        android:layout_width="47dp"
-        android:layout_height="57dp"
+        android:layout_width="50dp"
+        android:layout_height="54dp"
         android:background="#00FFFFFF"
         android:text="@string/_493"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.687"
+        app:layout_constraintHorizontal_bias="0.699"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.284" />
+        app:layout_constraintVertical_bias="0.263" />
 
     <Button
         android:id="@+id/r485"
-        android:layout_width="38dp"
-        android:layout_height="41dp"
+        android:layout_width="50dp"
+        android:layout_height="38dp"
         android:background="#00FFFFFF"
-        android:text="@string/就活支援室485"
+        android:text="@string/_485"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.361" />
+        app:layout_constraintVertical_bias="0.347" />
 
     <Button
         android:id="@+id/r484"
-        android:layout_width="37dp"
-        android:layout_height="42dp"
+        android:layout_width="50dp"
+        android:layout_height="38dp"
         android:background="#00FFFFFF"
-        android:text="@string/小講義室484"
+        android:text="@string/_484"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.357" />
+        app:layout_constraintVertical_bias="0.347" />
 
     <Button
         android:id="@+id/com483"
-        android:layout_width="39dp"
-        android:layout_height="39dp"
+        android:layout_width="50dp"
+        android:layout_height="38dp"
         android:background="#00FFFFFF"
-        android:text="@string/コンピューター教室483"
+        android:text="@string/_483"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.677"
+        app:layout_constraintHorizontal_bias="0.699"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.36" />
+        app:layout_constraintVertical_bias="0.347" />
 
     <Button
         android:id="@+id/secretariat"
-        android:layout_width="39dp"
-        android:layout_height="78dp"
+        android:layout_width="43dp"
+        android:layout_height="85dp"
         android:background="#00FFFFFF"
         android:text="@string/大学事務局"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintHorizontal_bias="0.928"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.307" />
+        app:layout_constraintVertical_bias="0.297" />
 
     <Button
         android:id="@+id/auditorium"
         android:layout_width="42dp"
-        android:layout_height="91dp"
+        android:layout_height="101dp"
         android:background="#00FFFFFF"
         android:text="@string/講堂"
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintHorizontal_bias="0.928"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.722" />
+        app:layout_constraintVertical_bias="0.754" />
 
     <Button
         android:id="@+id/labo"
@@ -399,10 +403,10 @@
         android:background="#00FFFFFF"
         android:text="@string/共同研究室"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintHorizontal_bias="0.92"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.68" />
@@ -414,87 +418,87 @@
         android:background="#00FFFFFF"
         android:text="@string/中講義室595"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.635" />
+        app:layout_constraintVertical_bias="0.645" />
 
     <Button
         android:id="@+id/r594"
-        android:layout_width="41dp"
-        android:layout_height="50dp"
+        android:layout_width="42dp"
+        android:layout_height="52dp"
         android:background="#00FFFFFF"
         android:text="@string/中講義室594"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.559"
+        app:layout_constraintHorizontal_bias="0.561"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        app:layout_constraintVertical_bias="0.645" />
 
     <Button
         android:id="@+id/r593"
-        android:layout_width="40dp"
-        android:layout_height="50dp"
+        android:layout_width="42dp"
+        android:layout_height="52dp"
         android:background="#00FFFFFF"
         android:text="@string/中講義室593"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.674"
+        app:layout_constraintHorizontal_bias="0.686"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        app:layout_constraintVertical_bias="0.645" />
 
     <Button
         android:id="@+id/r585"
-        android:layout_width="42dp"
-        android:layout_height="45dp"
+        android:layout_width="46dp"
+        android:layout_height="44dp"
         android:layout_marginEnd="3dp"
         android:background="#00FFFFFF"
-        android:text="@string/小講義室585"
+        android:text="@string/_585"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="6sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/r584"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705" />
+        app:layout_constraintVertical_bias="0.719" />
 
     <Button
         android:id="@+id/r584"
-        android:layout_width="42dp"
-        android:layout_height="40dp"
+        android:layout_width="46dp"
+        android:layout_height="44dp"
         android:background="#00FFFFFF"
         android:text="@string/小講義室584"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="6sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.564"
+        app:layout_constraintHorizontal_bias="0.561"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.703" />
+        app:layout_constraintVertical_bias="0.719" />
 
     <Button
         android:id="@+id/r583"
-        android:layout_width="42dp"
-        android:layout_height="43dp"
+        android:layout_width="46dp"
+        android:layout_height="44dp"
         android:background="#00FFFFFF"
         android:text="@string/小講義室583"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="6sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintHorizontal_bias="0.68"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.706" />
+        app:layout_constraintVertical_bias="0.719" />
 </androidx.constraintlayout.widget.ConstraintLayout>
