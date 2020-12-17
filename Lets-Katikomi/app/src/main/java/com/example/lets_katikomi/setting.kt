@@ -21,7 +21,7 @@ class setting : AppCompatActivity() {
         //データの型に合わせたメソッドでデータを読み取る。
         //第１引数→保存に指定したキー,第２引数→キーがないときの返すデータ
 
-        val editText = findViewById<EditText>(R.id.editTextTextPersonName2)
+        val editText = findViewById<EditText>(R.id.name)
         editText.setText(storedText)
         //EditTextに読み取ったデータ表示してる
 

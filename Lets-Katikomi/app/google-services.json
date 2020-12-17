@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "637159718536",
+    "project_id": "lets-katikomi",
+    "storage_bucket": "lets-katikomi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637159718536:android:8ca51f2d566b8315a1293d",
+        "android_client_info": {
+          "package_name": "com.example.lets_katikomi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "637159718536-6gmhlagfomp43ih6biok42bmddte9nba.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0hSapeGUMuJbj2fNtbo5WEOFpFNpIsNs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "637159718536-6gmhlagfomp43ih6biok42bmddte9nba.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
