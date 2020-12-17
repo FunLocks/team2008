@@ -53,10 +53,11 @@
 
     <TextView
         android:id="@+id/username"
-        android:layout_width="87dp"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="30dp"
+        android:gravity="right"
         android:text="username"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,4 +94,13 @@
         app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="@+id/mapView"
         app:layout_constraintStart_toStartOf="@+id/mapView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="あなたの名前："
+        app:layout_constraintEnd_toStartOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
