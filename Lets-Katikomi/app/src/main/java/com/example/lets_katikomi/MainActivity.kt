@@ -65,10 +65,10 @@ class MainActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                val text = parent?.selectedItem as String
+                val floor = parent?.selectedItem as String
 
 
-                when(text) {
+                when(floor) {
                     "F1" -> {
                         image.setImageResource(R.drawable.fun1)
                         dining.visibility=View.VISIBLE
@@ -240,14 +240,19 @@ class MainActivity : AppCompatActivity() {
 
             val name = storedText.toString()
 
-            val user = hashMapOf(
-                "user" to name
-            )
+            if (selectedRoom.text == "選択された部屋") {
+                Toast.makeText(applicationContext, "部屋を選択してください", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                val user = hashMapOf(
+                        "user" to name
+                )
 
-            db.collection("users").document(name)
-                .set(user)
-                .addOnSuccessListener { Toast.makeText(applicationContext, "入室しました", Toast.LENGTH_SHORT).show() }
-                .addOnFailureListener { Toast.makeText(applicationContext, "入室に失敗しました", Toast.LENGTH_SHORT).show() }
+                db.collection(selectedRoom.text.toString()).document(name)
+                        .set(user)
+                        .addOnSuccessListener { Toast.makeText(applicationContext, "入室しました", Toast.LENGTH_SHORT).show() }
+                        .addOnFailureListener { Toast.makeText(applicationContext, "入室に失敗しました", Toast.LENGTH_SHORT).show() }
+            }
         }
         else {
             Toast.makeText(applicationContext, "設定から名前を入力してください", Toast.LENGTH_SHORT).show()
@@ -263,14 +268,123 @@ class MainActivity : AppCompatActivity() {
 
             val name = storedText.toString()
 
-            db.collection("users").document(name)
-                .delete()
-                .addOnSuccessListener { Toast.makeText(applicationContext, "退室しました", Toast.LENGTH_SHORT).show() }
-                .addOnFailureListener { Toast.makeText(applicationContext, "退室に失敗しました", Toast.LENGTH_SHORT).show() }
+            if (selectedRoom.text == "選択された部屋") {
+                Toast.makeText(applicationContext, "部屋を選択してください", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                db.collection(selectedRoom.text.toString()).document(name)
+                        .delete()
+                        .addOnSuccessListener { Toast.makeText(applicationContext, "退室しました", Toast.LENGTH_SHORT).show() }
+                        .addOnFailureListener { Toast.makeText(applicationContext, "退室に失敗しました", Toast.LENGTH_SHORT).show() }
+            }
         }
         else {
             Toast.makeText(applicationContext, "設定から名前を入力してください", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun onClickDining(view: View) {
+        selectedRoom.text = dining.text
+    }
+
+    fun onClickAtelier(view: View) {
+        selectedRoom.text = atelier.text
+    }
+
+    fun onClickShop(view: View) {
+        selectedRoom.text = shop.text
+    }
+
+    fun onClickMuseum(view: View) {
+        selectedRoom.text = museum.text
+    }
+
+    fun onClickSocial(view: View) {
+        selectedRoom.text = social.text
+    }
+
+    fun onClickGym(view: View) {
+        selectedRoom.text = gym.text
+    }
+
+    fun onClickLargeLectureRoom(view: View) {
+        selectedRoom.text = largeLectureRoom.text
+    }
+
+    fun onClickLibrary(view: View) {
+        selectedRoom.text = library.text
+    }
+
+    fun onClickCom365(view: View) {
+        selectedRoom.text = com365.text
+    }
+
+    fun onClickCom364(view: View) {
+        selectedRoom.text = com364.text
+    }
+
+    fun onClickCom363(view: View) {
+        selectedRoom.text = com363.text
+    }
+
+    fun onClickC_d495(view: View) {
+        selectedRoom.text = c_d495.text
+    }
+
+    fun onClickC_d494(view: View) {
+        selectedRoom.text = c_d494.text
+    }
+
+    fun onClickR493(view: View) {
+        selectedRoom.text = r493.text
+    }
+
+    fun onClickR485(view: View) {
+        selectedRoom.text = r485.text
+    }
+
+    fun onClickR484(view: View) {
+        selectedRoom.text = r484.text
+    }
+
+    fun onClickCom483(view: View) {
+        selectedRoom.text = com483.text
+    }
+
+    fun onClickSecretariat(view: View) {
+        selectedRoom.text = secretariat.text
+    }
+
+    fun onClickAuditorium(view: View) {
+        selectedRoom.text = auditorium.text
+    }
+
+    fun onClickLabo(view: View) {
+        selectedRoom.text = labo.text
+    }
+
+    fun onClickR595(view: View) {
+        selectedRoom.text = r595.text
+    }
+
+    fun onClickR594(view: View) {
+        selectedRoom.text = r594.text
+    }
+
+    fun onClickR593(view: View) {
+        selectedRoom.text = r593.text
+    }
+
+    fun onClickR585(view: View) {
+        selectedRoom.text = r585.text
+    }
+
+    fun onClickR584(view: View) {
+        selectedRoom.text = r584.text
+    }
+
+    fun onClickR583(view: View) {
+        selectedRoom.text = r583.text
     }
 
 
