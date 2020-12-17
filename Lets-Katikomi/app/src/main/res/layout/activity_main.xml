@@ -39,6 +39,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="28dp"
         android:entries="@array/arrayFloor"
+        android:spinnerMode="dialog"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MtoD" />
 
@@ -107,7 +108,7 @@
         app:layout_constraintTop_toBottomOf="@+id/MtoS" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/dining"
         android:layout_width="45dp"
         android:layout_height="96dp"
         android:background="#00FFFFFF"
@@ -122,7 +123,7 @@
         app:layout_constraintVertical_bias="0.708" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/atelier"
         android:layout_width="72dp"
         android:layout_height="40dp"
         android:background="#00FFFFFF"
@@ -137,7 +138,7 @@
         app:layout_constraintVertical_bias="0.733" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/shop"
         android:layout_width="50dp"
         android:layout_height="58dp"
         android:background="#00FFFFFF"
@@ -152,7 +153,7 @@
         app:layout_constraintVertical_bias="0.643" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/museum"
         android:layout_width="39dp"
         android:layout_height="52dp"
         android:background="#00FFFFFF"
@@ -167,7 +168,7 @@
         app:layout_constraintVertical_bias="0.455" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/social"
         android:layout_width="41dp"
         android:layout_height="53dp"
         android:background="#00FFFFFF"
@@ -182,7 +183,7 @@
         app:layout_constraintVertical_bias="0.469" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/gym"
         android:layout_width="81dp"
         android:layout_height="125dp"
         android:background="#00FFFFFF"
@@ -197,7 +198,7 @@
         app:layout_constraintVertical_bias="0.387" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/largeLectureRoom"
         android:layout_width="81dp"
         android:layout_height="57dp"
         android:background="#00FFFFFF"
@@ -212,7 +213,7 @@
         app:layout_constraintVertical_bias="0.589" />
 
     <Button
-        android:id="@+id/button13"
+        android:id="@+id/library"
         android:layout_width="42dp"
         android:layout_height="163dp"
         android:background="#00FFFFFF"
@@ -227,7 +228,7 @@
         app:layout_constraintVertical_bias="0.705" />
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/com365"
         android:layout_width="40dp"
         android:layout_height="60dp"
         android:background="#00FFFFFF"
@@ -242,7 +243,7 @@
         app:layout_constraintVertical_bias="0.593" />
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/com364"
         android:layout_width="39dp"
         android:layout_height="55dp"
         android:background="#00FFFFFF"
@@ -257,7 +258,7 @@
         app:layout_constraintVertical_bias="0.587" />
 
     <Button
-        android:id="@+id/button16"
+        android:id="@+id/com363"
         android:layout_width="38dp"
         android:layout_height="55dp"
         android:background="#00FFFFFF"
@@ -272,7 +273,7 @@
         app:layout_constraintVertical_bias="0.589" />
 
     <Button
-        android:id="@+id/button17"
+        android:id="@+id/c_d495"
         android:layout_width="37dp"
         android:layout_height="54dp"
         android:background="#00FFFFFF"
@@ -287,7 +288,7 @@
         app:layout_constraintVertical_bias="0.281" />
 
     <Button
-        android:id="@+id/button18"
+        android:id="@+id/c_d494"
         android:layout_width="39dp"
         android:layout_height="53dp"
         android:background="#00FFFFFF"
@@ -302,7 +303,7 @@
         app:layout_constraintVertical_bias="0.281" />
 
     <Button
-        android:id="@+id/button19"
+        android:id="@+id/r493"
         android:layout_width="47dp"
         android:layout_height="57dp"
         android:background="#00FFFFFF"
@@ -317,7 +318,7 @@
         app:layout_constraintVertical_bias="0.284" />
 
     <Button
-        android:id="@+id/button20"
+        android:id="@+id/r485"
         android:layout_width="38dp"
         android:layout_height="41dp"
         android:background="#00FFFFFF"
@@ -332,7 +333,7 @@
         app:layout_constraintVertical_bias="0.361" />
 
     <Button
-        android:id="@+id/button21"
+        android:id="@+id/r484"
         android:layout_width="37dp"
         android:layout_height="42dp"
         android:background="#00FFFFFF"
@@ -347,7 +348,7 @@
         app:layout_constraintVertical_bias="0.357" />
 
     <Button
-        android:id="@+id/button22"
+        android:id="@+id/com483"
         android:layout_width="39dp"
         android:layout_height="39dp"
         android:background="#00FFFFFF"
@@ -362,7 +363,7 @@
         app:layout_constraintVertical_bias="0.36" />
 
     <Button
-        android:id="@+id/button23"
+        android:id="@+id/secretariat"
         android:layout_width="39dp"
         android:layout_height="78dp"
         android:background="#00FFFFFF"
@@ -377,7 +378,7 @@
         app:layout_constraintVertical_bias="0.307" />
 
     <Button
-        android:id="@+id/button24"
+        android:id="@+id/auditorium"
         android:layout_width="42dp"
         android:layout_height="91dp"
         android:background="#00FFFFFF"
@@ -392,7 +393,7 @@
         app:layout_constraintVertical_bias="0.722" />
 
     <Button
-        android:id="@+id/button25"
+        android:id="@+id/labo"
         android:layout_width="43dp"
         android:layout_height="84dp"
         android:background="#00FFFFFF"
@@ -407,7 +408,7 @@
         app:layout_constraintVertical_bias="0.68" />
 
     <Button
-        android:id="@+id/button26"
+        android:id="@+id/r595"
         android:layout_width="42dp"
         android:layout_height="52dp"
         android:background="#00FFFFFF"
@@ -422,7 +423,7 @@
         app:layout_constraintVertical_bias="0.635" />
 
     <Button
-        android:id="@+id/button27"
+        android:id="@+id/r594"
         android:layout_width="41dp"
         android:layout_height="50dp"
         android:background="#00FFFFFF"
@@ -437,7 +438,7 @@
         app:layout_constraintVertical_bias="0.636" />
 
     <Button
-        android:id="@+id/button28"
+        android:id="@+id/r593"
         android:layout_width="40dp"
         android:layout_height="50dp"
         android:background="#00FFFFFF"
@@ -452,7 +453,7 @@
         app:layout_constraintVertical_bias="0.636" />
 
     <Button
-        android:id="@+id/button29"
+        android:id="@+id/r585"
         android:layout_width="42dp"
         android:layout_height="45dp"
         android:layout_marginEnd="3dp"
@@ -461,14 +462,14 @@
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button30"
+        app:layout_constraintEnd_toStartOf="@+id/r584"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.705" />
 
     <Button
-        android:id="@+id/button30"
+        android:id="@+id/r584"
         android:layout_width="42dp"
         android:layout_height="40dp"
         android:background="#00FFFFFF"
@@ -483,7 +484,7 @@
         app:layout_constraintVertical_bias="0.703" />
 
     <Button
-        android:id="@+id/button31"
+        android:id="@+id/r583"
         android:layout_width="42dp"
         android:layout_height="43dp"
         android:background="#00FFFFFF"

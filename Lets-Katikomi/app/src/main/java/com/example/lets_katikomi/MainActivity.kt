@@ -24,32 +24,32 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val image = findViewById<ImageView>(R.id.mapView)
-        val button1 = findViewById<Button>(R.id.button1)
-        val button5 = findViewById<Button>(R.id.button5)
-        val button = findViewById<Button>(R.id.button)
-        val button9 = findViewById<Button>(R.id.button9)
-        val button10 = findViewById<Button>(R.id.button10)
-        val button11 = findViewById<Button>(R.id.button11)
-        val button12 = findViewById<Button>(R.id.button12)
-        val button13 = findViewById<Button>(R.id.button13)
-        val button14 = findViewById<Button>(R.id.button14)
-        val button15 = findViewById<Button>(R.id.button15)
-        val button16 = findViewById<Button>(R.id.button16)
-        val button17 = findViewById<Button>(R.id.button17)
-        val button18 = findViewById<Button>(R.id.button18)
-        val button19 = findViewById<Button>(R.id.button19)
-        val button20 = findViewById<Button>(R.id.button20)
-        val button21 = findViewById<Button>(R.id.button21)
-        val button22 = findViewById<Button>(R.id.button22)
-        val button23 = findViewById<Button>(R.id.button23)
-        val button24 = findViewById<Button>(R.id.button24)
-        val button25 = findViewById<Button>(R.id.button25)
-        val button26 = findViewById<Button>(R.id.button26)
-        val button27 = findViewById<Button>(R.id.button27)
-        val button28 = findViewById<Button>(R.id.button28)
-        val button29 = findViewById<Button>(R.id.button29)
-        val button30 = findViewById<Button>(R.id.button30)
-        val button31 = findViewById<Button>(R.id.button31)
+        val button1 = findViewById<Button>(R.id.dining)
+        val button5 = findViewById<Button>(R.id.atelier)
+        val button = findViewById<Button>(R.id.shop)
+        val button9 = findViewById<Button>(R.id.museum)
+        val button10 = findViewById<Button>(R.id.social)
+        val button11 = findViewById<Button>(R.id.gym)
+        val button12 = findViewById<Button>(R.id.largeLectureRoom)
+        val button13 = findViewById<Button>(R.id.library)
+        val button14 = findViewById<Button>(R.id.com365)
+        val button15 = findViewById<Button>(R.id.com364)
+        val button16 = findViewById<Button>(R.id.com363)
+        val button17 = findViewById<Button>(R.id.c_d495)
+        val button18 = findViewById<Button>(R.id.c_d494)
+        val button19 = findViewById<Button>(R.id.r493)
+        val button20 = findViewById<Button>(R.id.r485)
+        val button21 = findViewById<Button>(R.id.r484)
+        val button22 = findViewById<Button>(R.id.com483)
+        val button23 = findViewById<Button>(R.id.secretariat)
+        val button24 = findViewById<Button>(R.id.auditorium)
+        val button25 = findViewById<Button>(R.id.labo)
+        val button26 = findViewById<Button>(R.id.r595)
+        val button27 = findViewById<Button>(R.id.r594)
+        val button28 = findViewById<Button>(R.id.r593)
+        val button29 = findViewById<Button>(R.id.r585)
+        val button30 = findViewById<Button>(R.id.r584)
+        val button31 = findViewById<Button>(R.id.r583)
         /*--------------------------------------------------------------------*/
         val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
         val storedText = pref.getString("key", "未登録")
@@ -236,7 +236,7 @@ class MainActivity : AppCompatActivity() {
         val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
         val storedText = pref.getString("key", "未登録")
 
-        if (storedText.equals("") == false) {
+        if (!storedText.equals("")) {
 
             val name = storedText.toString()
 
@@ -259,7 +259,7 @@ class MainActivity : AppCompatActivity() {
         val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
         val storedText = pref.getString("key", "未登録")
 
-        if (storedText.equals("") == false) {
+        if (!storedText.equals("")) {
 
             val name = storedText.toString()
 
