@@ -1,16 +1,23 @@
 package com.example.lets_katikomi
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -238,8 +245,74 @@ class MainActivity : AppCompatActivity() {
 
                 db.collection(selectedRoom.text.toString()).document(name)
                         .set(user)
-                        .addOnSuccessListener { Toast.makeText(applicationContext, "入室しました", Toast.LENGTH_SHORT).show() }
-                        .addOnFailureListener { Toast.makeText(applicationContext, "入室に失敗しました", Toast.LENGTH_SHORT).show() }
+                        .addOnSuccessListener {
+                            Toast.makeText(applicationContext, "入室しました", Toast.LENGTH_SHORT).show()
+
+                            val enteringRoom = selectedRoom.text
+
+                            val CHANNEL_ID = "channel_id"
+                            val channel_name = "channel_name"
+                            val channel_description = "channel_description"
+
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                val name = channel_name
+                                val descriptionText = channel_description
+                                val importance = NotificationManager.IMPORTANCE_DEFAULT
+                                val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
+                                    description = descriptionText
+                                }
+                                /// チャネルを登録
+                                val notificationManager: NotificationManager =
+                                    getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+                                notificationManager.createNotificationChannel(channel)
+                            }
+
+                            db.collection(enteringRoom.toString()).addSnapshotListener { snapshots, e ->
+                                if (e != null) {
+                                    Log.w("TAG", "Listen failed.", e)
+                                    return@addSnapshotListener
+                                }
+
+                                if (snapshots != null) {
+                                    for (dc in snapshots!!.documentChanges) {
+                                        if (dc.type == DocumentChange.Type.ADDED) {
+                                            val builder = NotificationCompat.Builder(this, CHANNEL_ID)
+                                                .setSmallIcon(R.drawable.ic_launcher_background)    /// 表示されるアイコン
+                                                .setContentTitle(dc.document.id + "さんが" + enteringRoom + "に入室しました")                  /// 通知タイトル
+                                                .setContentText("入室通知")                          /// 通知コンテンツ
+                                                .setPriority(NotificationCompat.PRIORITY_DEFAULT)   /// 通知の優先度
+
+                                            var notificationID = 0
+                                            with(NotificationManagerCompat.from(this)) {
+                                                notify(notificationID, builder.build())
+                                                notificationID += 1
+                                            }
+                                            Log.d("TAG", "Current user: ${dc.document.id}さんが${enteringRoom}に入室しました")
+                                        }
+                                        else if (dc.type == DocumentChange.Type.REMOVED) {
+                                            val builder = NotificationCompat.Builder(this, CHANNEL_ID)
+                                                .setSmallIcon(R.drawable.ic_launcher_background)    /// 表示されるアイコン
+                                                .setContentTitle(dc.document.id + "さんが" + enteringRoom + "から退室しました")                  /// 通知タイトル
+                                                .setContentText("退室通知")                          /// 通知コンテンツ
+                                                .setPriority(NotificationCompat.PRIORITY_DEFAULT)   /// 通知の優先度
+
+                                            var notificationID = 0
+                                            with(NotificationManagerCompat.from(this)) {
+                                                notify(notificationID, builder.build())
+                                                notificationID += 1
+                                            }
+                                            Log.d("TAG", "Current user: ${dc.document.id}さんが${enteringRoom}から退室しました")
+                                        }
+                                    }
+                                }
+                                else {
+                                    Log.d("TAG", "Current user: null")
+                                }
+                            }
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(applicationContext, "入室に失敗しました", Toast.LENGTH_SHORT).show()
+                        }
             }
         }
         else {
@@ -262,7 +335,12 @@ class MainActivity : AppCompatActivity() {
             else {
                 db.collection(selectedRoom.text.toString()).document(name)
                         .delete()
-                        .addOnSuccessListener { Toast.makeText(applicationContext, "退室しました", Toast.LENGTH_SHORT).show() }
+                        .addOnSuccessListener {
+                            Toast.makeText(applicationContext, "退室しました", Toast.LENGTH_SHORT).show()
+
+                            val enteringRoom = selectedRoom.text
+                            db.collection(enteringRoom.toString()).addSnapshotListener { snapshots, e -> } .remove()
+                        }
                         .addOnFailureListener { Toast.makeText(applicationContext, "退室に失敗しました", Toast.LENGTH_SHORT).show() }
             }
         }
