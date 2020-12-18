@@ -2,15 +2,15 @@ package com.example.lets_katikomi
 
 import android.content.Context
 import android.content.Intent
-
-import androidx.appcompat.app.AppCompatActivity
+import android.media.AudioAttributes
+import android.media.SoundPool
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.AdapterView
+import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -18,10 +18,30 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     val db = FirebaseFirestore.getInstance()
+    private lateinit var soundPool: SoundPool
+    private var soundOne = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val audioAttributes = AudioAttributes.Builder()
+                // USAGE_MEDIA
+                // USAGE_GAME
+                .setUsage(AudioAttributes.USAGE_GAME)
+                // CONTENT_TYPE_MUSIC
+                // CONTENT_TYPE_SPEECH, etc.
+                .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+                .build()
+
+        soundPool = SoundPool.Builder()
+                .setAudioAttributes(audioAttributes)
+                // ストリーム数に応じて
+                .setMaxStreams(2)
+                .build()
+
+        // one.wav をロードしておく
+        soundOne = soundPool.load(this, R.raw.katikomi, 1)
 
         val image = findViewById<ImageView>(R.id.mapView)
         val dining = findViewById<Button>(R.id.dining)
@@ -207,6 +227,7 @@ class MainActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
         }
+
     }
 
     fun onButtonTappedMD(view: View?) {
@@ -223,6 +244,7 @@ class MainActivity : AppCompatActivity() {
 
         val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
         val storedText = pref.getString("key", "未登録")
+        soundPool.play(soundOne, 2.0f, 2.0f, 0, 0, 1.0f)
 
         if (!storedText.equals("")) {
 
