@@ -231,11 +231,11 @@ class MainActivity : AppCompatActivity() {
         val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
         val storedText = pref.getString("key", "未登録")
 
-        if (!storedText.equals("")) {
+        if (!storedText.equals("") && storedText != "未登録") {
 
             val name = storedText.toString()
 
-            if (selectedRoom.text == "選択された部屋") {
+            if (selectedRoom.text == "未登録") {
                 Toast.makeText(applicationContext, "部屋を選択してください", Toast.LENGTH_SHORT).show()
             }
             else {
@@ -325,7 +325,7 @@ class MainActivity : AppCompatActivity() {
         val pref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
         val storedText = pref.getString("key", "未登録")
 
-        if (!storedText.equals("")) {
+        if (!storedText.equals("") && storedText != "未登録") {
 
             val name = storedText.toString()
 

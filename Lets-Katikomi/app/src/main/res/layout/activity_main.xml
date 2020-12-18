@@ -108,7 +108,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="選択された部屋"
+        android:text="未登録"
         android:textColor="#3c3c3c"
         app:layout_constraintBottom_toTopOf="@+id/getoutRoom"
         app:layout_constraintEnd_toEndOf="@+id/mapView"
