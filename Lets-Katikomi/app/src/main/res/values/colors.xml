@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="abcd">#C87618</color>
+    <color name="efgh">#FFAA5A</color>
+    <color name="ijkl">#FBFAF5</color>
+    <color name="mnop">#616864</color>
+    <color name="map_kage">#6b6b6b</color>
 </resources>

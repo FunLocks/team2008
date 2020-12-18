@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:shape="rectangle"
     tools:context=".MainActivity">
-
 
     <Button
         android:id="@+id/MtoD"
@@ -15,6 +17,9 @@
         android:layout_marginTop="32dp"
         android:onClick="onButtonTappedMD"
         android:text="@string/mapTOdetail"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:backgroundTint="@drawable/button_state"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,6 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
+        app:backgroundTint="#fbfaf5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -40,6 +46,7 @@
         android:layout_marginTop="28dp"
         android:entries="@array/arrayFloor"
         android:spinnerMode="dialog"
+        android:textColor="#3c3c3c"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MtoD" />
 
@@ -51,6 +58,9 @@
         android:layout_marginEnd="36dp"
         android:onClick="onButtonTappedMS"
         android:text="@string/mapTOsetting"
+        android:textColor="#FFFFFFFF"
+        android:textSize="18sp"
+        app:backgroundTint="@drawable/button_state"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,7 +72,7 @@
         android:layout_marginEnd="30dp"
         android:gravity="right"
         android:text="username"
-        android:textColor="#000000"
+        android:textColor="#3c3c3c"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MtoS" />
@@ -75,6 +85,8 @@
         android:layout_marginBottom="16dp"
         android:onClick="onClickEnter"
         android:text="入室"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="@drawable/button_state"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -86,6 +98,8 @@
         android:layout_marginBottom="16dp"
         android:onClick="onClickLeave"
         android:text="退室"
+        android:textColor="#FFFFFFFF"
+        app:backgroundTint="@drawable/button_state"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -95,7 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="選択された部屋"
-        android:textColor="#000000"
+        android:textColor="#3c3c3c"
         app:layout_constraintBottom_toTopOf="@+id/getoutRoom"
         app:layout_constraintEnd_toEndOf="@+id/mapView"
         app:layout_constraintStart_toStartOf="@+id/mapView" />
@@ -106,7 +120,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="あなたの名前："
-        android:textColor="#000000"
+        android:textColor="#3c3c3c"
         app:layout_constraintEnd_toStartOf="@+id/username"
         app:layout_constraintTop_toBottomOf="@+id/MtoS" />
 
@@ -131,8 +145,8 @@
         android:layout_width="81dp"
         android:layout_height="42dp"
         android:background="#00FFFFFF"
-        android:onClick="onClickAtelier"
         android:gravity="center"
+        android:onClick="onClickAtelier"
         android:text="@string/アトリエ"
         android:textColor="@color/black"
         android:textSize="10sp"
