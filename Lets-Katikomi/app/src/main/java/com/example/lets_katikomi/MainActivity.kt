@@ -267,8 +267,7 @@ class MainActivity : AppCompatActivity() {
                                 notificationManager.createNotificationChannel(channel)
                             }
 
-                            val docRef = db.collection(enteringRoom.toString())
-                            docRef.addSnapshotListener { snapshots, e ->
+                            db.collection(enteringRoom.toString()).addSnapshotListener { snapshots, e ->
                                 if (e != null) {
                                     Log.w("TAG", "Listen failed.", e)
                                     return@addSnapshotListener
@@ -288,7 +287,7 @@ class MainActivity : AppCompatActivity() {
                                                 notify(notificationID, builder.build())
                                                 notificationID += 1
                                             }
-                                            Log.d("TAG", "Current user: ${dc.document.id}さんが入室しました")
+                                            Log.d("TAG", "Current user: ${dc.document.id}さんが${enteringRoom}に入室しました")
                                         }
                                         else if (dc.type == DocumentChange.Type.REMOVED) {
                                             val builder = NotificationCompat.Builder(this, CHANNEL_ID)
@@ -302,7 +301,7 @@ class MainActivity : AppCompatActivity() {
                                                 notify(notificationID, builder.build())
                                                 notificationID += 1
                                             }
-                                            Log.d("TAG", "Current user: ${dc.document.id}さんが退室しました")
+                                            Log.d("TAG", "Current user: ${dc.document.id}さんが${enteringRoom}から退室しました")
                                         }
                                     }
                                 }
@@ -311,7 +310,9 @@ class MainActivity : AppCompatActivity() {
                                 }
                             }
                         }
-                        .addOnFailureListener { Toast.makeText(applicationContext, "入室に失敗しました", Toast.LENGTH_SHORT).show() }
+                        .addOnFailureListener {
+                            Toast.makeText(applicationContext, "入室に失敗しました", Toast.LENGTH_SHORT).show()
+                        }
             }
         }
         else {
@@ -334,7 +335,12 @@ class MainActivity : AppCompatActivity() {
             else {
                 db.collection(selectedRoom.text.toString()).document(name)
                         .delete()
-                        .addOnSuccessListener { Toast.makeText(applicationContext, "退室しました", Toast.LENGTH_SHORT).show() }
+                        .addOnSuccessListener {
+                            Toast.makeText(applicationContext, "退室しました", Toast.LENGTH_SHORT).show()
+
+                            val enteringRoom = selectedRoom.text
+                            db.collection(enteringRoom.toString()).addSnapshotListener { snapshots, e -> } .remove()
+                        }
                         .addOnFailureListener { Toast.makeText(applicationContext, "退室に失敗しました", Toast.LENGTH_SHORT).show() }
             }
         }
